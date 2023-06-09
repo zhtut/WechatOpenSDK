@@ -7,7 +7,7 @@
 1、 在 Package 中的 dependencies 加入引用
 
 ```swift
-.package(url: "https://github.com/zhtut/WechatOpenSDK.git", "2.0.0"..."10.0.0"),
+.package(url: "https://github.com/zhtut/WechatOpenSDK.git", branch: "main"),
 ```
 
 版本号看情况引入，上面的情况是大于 2 并小于 10 的任意版本号
@@ -25,3 +25,8 @@
 ```swift
 import WechatOpenSDK
 ```
+
+本来要使用tag的，但是这里打tag系统会报一个错误
+the target 'WechatOpenSDKSetting' in product 'WechatOpenSDK' contains unsafe build flags
+这里又不好去掉，因为WXApi是ObjC的类，使用了Category，需要在编译的时候在Other Link Flags加上-ObjC命令，
+这个应该是系统的bug，使用分支和本地path都可以编译通过，就使用tag不行，暂且就先使用分支吧
