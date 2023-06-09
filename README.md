@@ -10,7 +10,7 @@
 .package(url: "https://github.com/zhtut/WechatOpenSDK.git", branch: "main"),
 ```
 
-版本号看情况引入，上面的情况是大于 2 并小于 10 的任意版本号
+目前的微信版本号是2.0.2
 
 2、 在 target 的 dependencies 加入引用`"WechatOpenSDK"`
 
