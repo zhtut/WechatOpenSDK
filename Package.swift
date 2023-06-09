@@ -18,7 +18,7 @@ let package = Package(name: "WechatOpenSDK",
                                     .linkedLibrary("z"),
                                     .linkedLibrary("sqlite3.0"),
                                     .linkedLibrary("c++"),
-                                    .unsafeFlags(["-ObjC", "-all_load"]),
+                                    .unsafeFlags(["-ObjC"])
                                 ]),
                         .binaryTarget(name: "WechatOpenSDK",
                                       path: "WechatOpenSDK.xcframework"),
