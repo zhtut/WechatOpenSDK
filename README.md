@@ -1,4 +1,4 @@
-# wechat_open_sdk
+# WechatOpenSDK
 
 微信 opensdk 的 swift package manager 封装
 
