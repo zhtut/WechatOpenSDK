@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(name: "WechatOpenSDK",
                       platforms: [.iOS(.v11)],
                       products: [
-                        .library(name: "WechatOpenSDK", targets: [ "WechatOpenSDK" ]),
+                        .library(name: "WechatOpenSDK", targets: [ "WechatOpenSDKSetting", "WechatOpenSDK" ]),
                       ],
                       targets: [
-                        .target(name: "WechatOpenSDK",
+                        .target(name: "WechatOpenSDKSetting",
                                 linkerSettings: [
                                     .linkedFramework("Security"),
                                     .linkedFramework("UIKit"),
@@ -18,7 +18,8 @@ let package = Package(name: "WechatOpenSDK",
                                     .linkedLibrary("z"),
                                     .linkedLibrary("sqlite3.0"),
                                     .linkedLibrary("c++"),
+                                    .unsafeFlags(["-ObjC", "-all_load"]),
                                 ]),
-                        .binaryTarget(name: "WechatOpenSDKXCFramework",
+                        .binaryTarget(name: "WechatOpenSDK",
                                       path: "WechatOpenSDK.xcframework"),
                       ])
